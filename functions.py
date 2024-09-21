@@ -6,23 +6,39 @@ import data
 def get_item_information(item_code):
   """ this  function that will return the item name and price for a given item code.
     For example, find_menu_item('D2') should return Lemonade, and integer 3 as the result """
-  print(item_code)
   for item in data.menu_items:
     item_number, item_name, item_price = item.split(' ')
     if item_number == item_code:
       return item_name.encode("ascii", "ignore").decode(), int(item_price)
 
-def display_items():
-  pass
+drink_list = []
+for drink in drink_items :
+    item_info = get_item_information(drink)
+    drink_list.append(item_info)
+print(f"drink_list: {drink_list}")
 
-def get_item_number():
-  while True:
-    print('Drinks', [d.replace('\u200b','') for d in data.menu_items if d[0] == 'D'])
-    print('Appetizers', [d.replace('\u200b','') for d in data.menu_items if d[0] == 'A'])
-    #write code for displaying the other dishes also
-    order_item = input('Enter dish number and quantity: ')
-    if order_item.split()[0] in data.all_items:
-      return order_item
-    else:
-      print('Invalid dish number.  Please try again')
+appetizer_list = []
+for appetizer in appetizer_items :
+    item_info = get_item_information(appetizer)
+    appetizer_list.append(item_info)
+print(f"appetizer_list: {appetizer_list}")
+
+salad_list = []
+for salad in salad_items :
+    item_info = get_item_information(salad)
+    salad_list.append(item_info)
+print(f"salad_list: {salad_list}")
+
+entree_list = []
+for entree in entree_items :
+    item_info = get_item_information(entree)
+    entree_list.append(item_info)
+print(f"entree_list: {entree_list}")
+
+dessert_list = []
+for dessert in dessert_items :
+    item_info = get_item_information(dessert)
+    dessert_list.append(item_info)
+print(f"dessert_list: {dessert_list}")
+
 
